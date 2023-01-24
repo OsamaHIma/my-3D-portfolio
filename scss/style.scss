@@ -236,6 +236,9 @@ a {
     .loading {
         @include setFlex();
         flex-direction: column;
+        .spinner-border {
+            background-image: linear-gradient(45deg, #4da3d4, #67c76f);
+        }
     }
     .circle {
         width: 10px;
