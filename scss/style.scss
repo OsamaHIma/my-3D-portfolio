@@ -7,7 +7,6 @@
     // outline:2px solid #117f9b;
 }
 
-
 ::-webkit-scrollbar {
     width: 0.5em;
     height: 0.5em;
@@ -114,9 +113,12 @@ a {
     border: 1px solid #68a96d;
     border-radius: 7px;
     margin: 0 7px;
+    transition: .4s all ease-in-out;
+    color: var(--color-text);
     &:hover {
-        color: var(--color-text);
-        background-color: #68a96d;
+        color: #fff;
+        background-image: linear-gradient(45deg, #7ad0ac, #68a96d);
+        border: none;
     }
 }
 /* Experience --------------------------------------------- */
