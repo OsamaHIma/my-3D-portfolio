@@ -7,29 +7,29 @@ const fileInput = document.getElementById("file");
 const fileName = document.getElementById("file-name");
 fileInput.addEventListener("change", (ev) => {
   fileName.textContent = ev.target.files[0].name;
-})(
-  // Validate inputs
+});
 
-  () => {
-    "use strict";
+// Validate inputs
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll(".needs-validation");
+(() => {
+  "use strict";
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach((form) => {
-      form.addEventListener(
-        "submit",
-        (event) => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll(".needs-validation");
 
-          form.classList.add("was-validated");
-        },
-        false
-      );
-    });
-  }
-)();
+  // Loop over them and prevent submission
+  Array.from(forms).forEach((form) => {
+    form.addEventListener(
+      "submit",
+      (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();

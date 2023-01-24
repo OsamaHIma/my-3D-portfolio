@@ -111,12 +111,12 @@ a {
 
 .skill {
     padding: 10px 13px;
-    border: 1px solid var(--color-background-dark);
+    border: 1px solid #68a96d;
     border-radius: 7px;
     margin: 0 7px;
     &:hover {
         color: var(--color-text);
-        background-color: var(--color-background-dark);
+        background-color: #68a96d;
     }
 }
 /* Experience --------------------------------------------- */
