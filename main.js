@@ -9,15 +9,22 @@ fileInput.addEventListener("change", (ev) => {
   fileName.textContent = ev.target.files[0].name;
 });
 
+const validatedInputs = [];
+const inputs = Array.from(document.querySelectorAll(".form-control"));
+inputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    input.value ? validatedInputs.push(input) : validatedInputs.pop(input);
+    const currentProgress = validatedInputs.length * (100 / 3);
+    const progressBar = document.getElementById("FormProgressBar");
+    progressBar.style.width = `${currentProgress}%`;
+  });
+});
+
 // Validate inputs
 
 (() => {
-  "use strict";
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
 
-  // Loop over them and prevent submission
   Array.from(forms).forEach((form) => {
     form.addEventListener(
       "submit",

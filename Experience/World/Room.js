@@ -48,7 +48,6 @@ export default class Room {
       if (child.name === "small_cube") {
         child.scale.set(1, 1, 1);
       }
-      // child.scale.set(0, 0, 0);
 
       if (child instanceof THREE.Group) {
         child.children.forEach((groupChild) => {
@@ -75,16 +74,16 @@ export default class Room {
     this.rectLightHelper = new RectAreaLightHelper(this.rectLight);
     this.rectLight.add(this.rectLightHelper);
     this.roomChildren["rectLight"] = this.rectLight;
-    // this.rectLight.rotation.set(3, 0,0)
+
 
     // this.cubeFolder3 = this.gui.addFolder("Light rotation");
-    // this.cubeFolder3.add(this.rectLight.rotation, "x", -10, 10);
-    // this.cubeFolder3.add(this.rectLight.rotation, "y", -10, 10);
-    // this.cubeFolder3.add(this.rectLight.rotation, "z", -10, 10);
+    // this.cubeFolder3.add(this.rectLight2.rotation, "x", -20, 20);
+    // this.cubeFolder3.add(this.rectLight2.rotation, "y", -20, 20);
+    // this.cubeFolder3.add(this.rectLight2.rotation, "z", -20, 20);
     // this.cubeFolder3 = this.gui.addFolder("Light position");
-    // this.cubeFolder3.add(this.rectLight.position, "x", -10, 10);
-    // this.cubeFolder3.add(this.rectLight.position, "y", -10, 10);
-    // this.cubeFolder3.add(this.rectLight.position, "z", -10, 10);
+    // this.cubeFolder3.add(this.rectLight2.position, "x", -20, 20);
+    // this.cubeFolder3.add(this.rectLight2.position, "y", -20, 20);
+    // this.cubeFolder3.add(this.rectLight2.position, "z", -20, 20);
     // this.cubeFolder3.open();
     // this.room.position.y = -0.8;
     this.scene.add(this.room);

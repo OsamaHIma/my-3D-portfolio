@@ -31,10 +31,12 @@ export default class Experience {
     this.world = new World();
     this.preloader = new Preloader();
     this.scrollDownIcon = document.querySelector(".mouse-wrapper");
+    this.device = this.sizes.device;
+
+    // this.changeScrollDownIcon();
 
     this.preloader.on("enableControls", () => {
       this.controls = new Controls();
-      console.log("constrols set");
     });
 
     this.sizes.on("resize", () => {
@@ -43,24 +45,20 @@ export default class Experience {
     this.time.on("update", () => {
       this.update();
     });
-
-    this.changeScrollDownIcon();
   }
 
-  changeScrollDownIcon() {
-    window.addEventListener("resize", () => {
-      if (this.sizes.device === "mobile") {
-        this.scrollDownIcon.innerHTML = `
-              <i class="fa fa-chevron-down"></i>
-              
-              `;
-      } else {
-        this.scrollDownIcon.innerHTML = `<span class="mouse-outline">
-                      <span class="mouse-btn"></span>
-                    </span>`;
-      }
-    });
-  }
+  // changeScrollDownIcon() {
+  //   if (this.device === "mobile") {
+  //     this.scrollDownIcon.innerHTML = `
+  //             <i class="fa fa-chevron-down"></i>          
+  //             `;
+  //   } else {
+  //     this.scrollDownIcon.innerHTML = `<span class="mouse-outline">
+  //                     <span class="mouse-btn"></span>
+  //                   </span>`;
+  //   }
+  // }
+
   resize() {
     this.camera.resize();
     this.world.resize();
