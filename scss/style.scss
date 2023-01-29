@@ -29,7 +29,7 @@ span {
 
 :root {
     /* Light Theme Variables */
-    --color-white: #fff;
+    --color-white: #ffffff;
     --color-text-light: #333332;
     --color-background-light: linear-gradient(45deg, #bef7cc, #faf4e5);
     --color-green-light: #c0e0ba;
@@ -582,7 +582,7 @@ footer {
         &-item {
             margin: 0 10px;
             a:hover {
-                color: #b6b5b5;
+                color: var(--color-white);
             }
         }
     }
