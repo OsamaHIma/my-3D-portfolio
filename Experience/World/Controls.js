@@ -94,7 +94,7 @@ export default class Controls {
       // Desktop
       "(min-width: 969px)": () => {
         // Reset --------------------------------
-        this.room.scale.set(0.12, 0.12, 0.12);
+        this.room.scale.set(0.13, 0.13, 0.13);
         this.rectLight.width = 0.3;
         this.rectLight.height = 0.3;
         this.camera.orthographicCamera.position.set(0, 6.5, 10);
@@ -145,23 +145,22 @@ export default class Controls {
             },
             "same"
           )
-          .to(
-            this.room.scale,
-            {
-              x: 0.6,
-              y: 0.6,
-              z: 0.6,
-            },
-            "same"
-          );
-        // .to(this.room.rotation, { y: 8, z: -3, x: 0.5 }, "same")
+        .to(
+          this.room.scale,
+          {
+            x: 0.6,
+            y: 0.6,
+            z: 0.6,
+          },
+          "same"
+        );
         // .to(
         //   this.room.position,
         //   {
-        //     y: 2,
+
         //   },
         //   "same"
-        // );
+        // )
         // third section -----------------------------------------
 
         this.thirdMoveTimeline = new GSAP.timeline({

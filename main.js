@@ -14,7 +14,7 @@ const inputs = Array.from(document.querySelectorAll(".form-control"));
 inputs.forEach((input) => {
   input.addEventListener("change", () => {
     input.value ? validatedInputs.push(input) : validatedInputs.pop(input);
-    const currentProgress = validatedInputs.length * (100 / 3);
+    const currentProgress = validatedInputs.length * (100 / inputs.length);
     const progressBar = document.getElementById("FormProgressBar");
     progressBar.style.width = `${currentProgress}%`;
   });

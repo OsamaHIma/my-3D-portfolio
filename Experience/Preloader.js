@@ -379,7 +379,7 @@ export default class Preloader extends EventEmitter {
     this.roomChildren.rectLight.height = 0;
 
     if (this.device === "desktop") {
-      this.room.scale.set(0.12, 0.12, 0.12);
+      this.room.scale.set(0.13, 0.13, 0.13);
     } else {
       this.room.scale.set(0.1, 0.1, 0.1);
     }

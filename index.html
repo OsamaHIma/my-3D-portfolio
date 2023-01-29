@@ -127,7 +127,7 @@
               <p class="section-number">01</p>
             </section>
 
-            <section class="section-detail-wrapper">
+            <section class="section-detail-wrapper" id="certifications">
               <h3 class="section-heading" translate="">
                 Udacity Professional Front-end program
               </h3>
@@ -183,7 +183,7 @@
               <p class="section-number">02</p>
             </section>
 
-            <section class="section-detail-wrapper" id="my-skills">
+            <section class="section-detail-wrapper" id="my-skills" name="skills">
               <ul class="skills-container list-group list-group-flush">
                 <li
                   class="list-group-item d-flex align-items-center justify-content-between"
@@ -220,6 +220,32 @@
                 >
                   <i class="fab fa-bootstrap fa-3x text-pink"></i>
                   <p class="mb-0">Bootstrap</p>
+                </li>
+                <li
+                  class="list-group-item d-flex align-items-center justify-content-between"
+                >
+                  <img src="/images/redux.svg" class="w-20">
+                  <p class="mb-0">Redux.js</p>
+                </li>
+                <li
+                  class="list-group-item d-flex align-items-center justify-content-between"
+                >
+                <img src="/images/axios.svg" class="w-20">
+
+                  <p class="mb-0">Axios</p>
+                </li>
+                <li
+                  class="list-group-item d-flex align-items-center justify-content-between"
+                >
+                <img src="/images/ajax.svg" class="w-20">
+                  <p class="mb-0">Ajax</p>
+                </li>
+                <li
+                  class="list-group-item d-flex align-items-center justify-content-between"
+                >
+                <img src="/images/react-router.svg" class="w-20">
+
+                  <p class="mb-0">React router</p>
                 </li>
               </ul>
             </section>
@@ -398,19 +424,35 @@
                 novalidate
               >
                 <div class="mb-3">
-                  <label for="name" class="form-label">Your Name</label>
+                  <label for="name" class="form-label">First Name</label>
                   <input
                     type="text"
                     class="form-control"
                     id="name"
-                    placeholder="John Doe"
-                    name="Name"
+                    placeholder="John"
+                    name="first_name"
                     minlength="2"
                     required
                   />
 
                   <div class="invalid-feedback">
-                    Your name must be between 2 and 120 characters long.
+                    Your First name must be at least 2 characters long.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Doe"
+                    name="last_name"
+                    minlength="2"
+                    required
+                  />
+
+                  <div class="invalid-feedback">
+                    Your last name must be at least 2 characters long.
                   </div>
                 </div>
                 <div class="mb-3">
