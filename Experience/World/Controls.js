@@ -145,22 +145,16 @@ export default class Controls {
             },
             "same"
           )
-        .to(
-          this.room.scale,
-          {
-            x: 0.6,
-            y: 0.6,
-            z: 0.6,
-          },
-          "same"
-        );
-        // .to(
-        //   this.room.position,
-        //   {
-
-        //   },
-        //   "same"
-        // )
+          .to(
+            this.room.scale,
+            {
+              x: 0.6,
+              y: 0.6,
+              z: 0.6,
+            },
+            "same"
+          )
+          
         // third section -----------------------------------------
 
         this.thirdMoveTimeline = new GSAP.timeline({
@@ -173,13 +167,37 @@ export default class Controls {
           },
         })
           .to(
+            this.room.scale,
+            {
+              x: 0.8,
+              y: 0.8,
+              z: 0.8,
+            },
+            "same"
+          )
+          .to(
             this.room.position,
             {
               x: () => {
-                return 4;
+                return 8;
               },
               z: () => {
                 return this.sizes.height * 0.0032;
+              },
+            },
+            "same"
+          )
+          .to(
+            this.camera.orthographicCamera.position,
+            {
+              y: () => {
+                return 7.1;
+              },
+              x: () => {
+                return 8.1;
+              },
+              z: () => {
+                return 10.1;
               },
             },
             "same"
@@ -212,6 +230,15 @@ export default class Controls {
               z: () => {
                 return this.sizes.height * 0.0032;
               },
+            },
+            "same"
+          )
+          .to(
+            this.room.scale,
+            {
+              x: 0.6,
+              y: 0.6,
+              z: 0.6,
             },
             "same"
           )

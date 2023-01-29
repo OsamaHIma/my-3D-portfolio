@@ -7,6 +7,6 @@ export default [
   {
     name: "screen",
     type: "videoTexture",
-    path: "/textures/Ghost.mp4",
+    path: "/textures/myWork.mp4",
   },
 ];
