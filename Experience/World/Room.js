@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
-// import { GUI } from "dat.gui";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 
 export default class Room {
@@ -13,7 +12,6 @@ export default class Room {
     this.fullRoom = this.resources.items.room;
     this.room = this.fullRoom.scene;
     this.roomChildren = {};
-    // this.gui = new GUI();
     this.lerp = {
       current: 0,
       target: 0,
@@ -75,17 +73,6 @@ export default class Room {
     this.rectLight.add(this.rectLightHelper);
     this.roomChildren["rectLight"] = this.rectLight;
 
-
-    // this.cubeFolder3 = this.gui.addFolder("Light rotation");
-    // this.cubeFolder3.add(this.rectLight2.rotation, "x", -20, 20);
-    // this.cubeFolder3.add(this.rectLight2.rotation, "y", -20, 20);
-    // this.cubeFolder3.add(this.rectLight2.rotation, "z", -20, 20);
-    // this.cubeFolder3 = this.gui.addFolder("Light position");
-    // this.cubeFolder3.add(this.rectLight2.position, "x", -20, 20);
-    // this.cubeFolder3.add(this.rectLight2.position, "y", -20, 20);
-    // this.cubeFolder3.add(this.rectLight2.position, "z", -20, 20);
-    // this.cubeFolder3.open();
-    // this.room.position.y = -0.8;
     this.scene.add(this.room);
     this.room.scale.set(0.12, 0.12, 0.12);
   }

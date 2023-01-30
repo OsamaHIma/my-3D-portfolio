@@ -1,4 +1,3 @@
-import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -20,7 +19,6 @@ export default class Controls {
       }
     });
 
-    // this.setSmoothScroll();
     this.circleFirst = this.experience.world.floor.circleFirst;
     this.circleSecond = this.experience.world.floor.circleSecond;
     this.circleThird = this.experience.world.floor.circleThird;
@@ -86,7 +84,7 @@ export default class Controls {
   }
 
   setSmoothScroll() {
-    this.asscroll = this.setUpASScroll;
+    this.asscroll = this.setupASScroll;
   }
 
   setScrollTrigger() {
@@ -153,8 +151,8 @@ export default class Controls {
               z: 0.6,
             },
             "same"
-          )
-          
+          );
+
         // third section -----------------------------------------
 
         this.thirdMoveTimeline = new GSAP.timeline({
@@ -252,9 +250,9 @@ export default class Controls {
           );
       },
 
-      // Mobile
+      // Mobile --------------------------------------------------------
       "(max-width: 968px)": () => {
-        // console.log("fired mobile");
+
         // Resets
         this.room.scale.set(0.1, 0.1, 0.1);
         this.room.position.set(0, 0, 0);
@@ -269,7 +267,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            // invalidateOnRefresh: true,
+            invalidateOnRefresh: true,
           },
         }).to(this.room.scale, {
           x: 0.1,
@@ -290,9 +288,9 @@ export default class Controls {
           .to(
             this.room.scale,
             {
-              x: 0.3,
-              y: 0.3,
-              z: 0.3,
+              x: 0.2,
+              y: 0.2,
+              z: 0.2,
             },
             "same"
           )
@@ -324,16 +322,32 @@ export default class Controls {
           .to(
             this.room.position,
             {
-              x: 1.7,
+              x: 3.3,
+              z: 1,
             },
             "same"
           )
           .to(
             this.room.scale,
             {
-              x: 0.5,
-              y: 0.5,
-              z: 0.5,
+              x: 0.6,
+              y: 0.6,
+              z: 0.6,
+            },
+            "same"
+          )
+          .to(
+            this.camera.orthographicCamera.position,
+            {
+              y: () => {
+                return 10;
+              },
+              x: () => {
+                return 9;
+              },
+              z: () => {
+                return 10;
+              },          
             },
             "same"
           );
@@ -347,12 +361,27 @@ export default class Controls {
             scrub: 0.6,
             invalidateOnRefresh: true,
           },
-        }).to(this.room.position, {
-          z: -4.5,
-        });
+        })
+          .to(
+            this.room.position,
+            {
+              x: 1.7,
+              z: -4.5,
+            },
+            "same"
+          )
+          .to(
+            this.camera.orthographicCamera.position,
+            {
+              y: 1.5,
+              x: -4.1,
+            },
+            "same"
+          );
       },
 
-      // all
+      // All ------------------------------------------------------------------------
+
       all: () => {
         // Progress pars animations -------------------------------------------
 

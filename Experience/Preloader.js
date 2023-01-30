@@ -242,7 +242,7 @@ export default class Preloader extends EventEmitter {
             x: 1,
             y: 1,
             z: 1,
-            ease: "back.out(2)",
+            ease: "back.out(1)",
             duration: 0.5,
           },
           ">-0.2"
@@ -264,7 +264,7 @@ export default class Preloader extends EventEmitter {
             x: 1,
             y: 1,
             z: 1,
-            ease: "back.out(1.8)",
+            ease: "back.out(1.5)",
             duration: 0.5,
           },
           ">-0.1"
