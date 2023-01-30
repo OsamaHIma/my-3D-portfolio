@@ -309,7 +309,7 @@ export default class Controls {
             },
             "same"
           );
-        // Third section
+        // Third section --------------------------------------------
         this.thirdMoveTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".third-move",
@@ -451,7 +451,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            // invalidateOnRefresh: true,
+            invalidateOnRefresh: true,
           },
         }).to(this.circleFirst.scale, {
           x: 5,
@@ -466,7 +466,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            // invalidateOnRefresh: true,
+            invalidateOnRefresh: true,
           },
         })
           .to(
@@ -493,7 +493,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            // invalidateOnRefresh: true,
+            invalidateOnRefresh: true,
           },
         }).to(this.circleThird.scale, {
           x: 5,
@@ -508,7 +508,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            // invalidateOnRefresh: true,
+            invalidateOnRefresh: true,
           },
         }).to(this.circleFourth.scale, {
           x: 5,

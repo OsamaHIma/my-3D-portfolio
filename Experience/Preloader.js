@@ -308,8 +308,7 @@ export default class Preloader extends EventEmitter {
           {
             y: 4 * Math.PI + Math.PI / 4,
             ease: "power2.out",
-            duration: 1,
-            // onComplete: resolve,
+            duration: 3,
           },
           "chair"
         )
