@@ -40,47 +40,47 @@ export default class Controls {
   }
 
   setupASScroll() {
-    // SRC: https://github.com/ashthornton/asscroll
     const asscroll = new ASScroll({
+      ease: 0.1,
       disableRaf: true,
-    });
+  });
 
-    GSAP.ticker.add(asscroll.update);
+  GSAP.ticker.add(asscroll.update);
 
-    ScrollTrigger.defaults({
+  ScrollTrigger.defaults({
       scroller: asscroll.containerElement,
-    });
+  });
 
-    ScrollTrigger.scrollerProxy(asscroll.containerElement, {
+  ScrollTrigger.scrollerProxy(asscroll.containerElement, {
       scrollTop(value) {
-        if (arguments.length) {
-          asscroll.currentPos = value;
-          return;
-        }
-        return asscroll.currentPos;
+          if (arguments.length) {
+              asscroll.currentPos = value;
+              return;
+          }
+          return asscroll.currentPos;
       },
       getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
+          return {
+              top: 0,
+              left: 0,
+              width: window.innerWidth,
+              height: window.innerHeight,
+          };
       },
       fixedMarkers: true,
-    });
+  });
 
-    asscroll.on("update", ScrollTrigger.update);
-    ScrollTrigger.addEventListener("refresh", asscroll.resize);
+  asscroll.on("update", ScrollTrigger.update);
+  ScrollTrigger.addEventListener("refresh", asscroll.resize);
 
-    requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
       asscroll.enable({
-        newScrollElements: document.querySelectorAll(
-          ".gsap-marker-start, .gsap-marker-end, [asscroll]"
-        ),
+          newScrollElements: document.querySelectorAll(
+              ".gsap-marker-start, .gsap-marker-end, [asscroll]"
+          ),
       });
-    });
-    return asscroll;
+  });
+  return asscroll;
   }
 
   setSmoothScroll() {
@@ -451,7 +451,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         }).to(this.circleFirst.scale, {
           x: 5,
@@ -466,7 +466,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         })
           .to(
@@ -493,7 +493,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         }).to(this.circleThird.scale, {
           x: 5,
@@ -508,7 +508,7 @@ export default class Controls {
             start: "top top",
             end: "bottom bottom",
             scrub: 0.6,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         }).to(this.circleFourth.scale, {
           x: 5,
