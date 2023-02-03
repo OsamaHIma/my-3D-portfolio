@@ -1,6 +1,6 @@
 import "./scss/style.scss";
 import Experience from "./Experience/Experience.js";
-
+console.log(`%cWhat are you doing here! are you a hacker?`,'color: #32ffce');
 const experience = new Experience(document.querySelector(".experience-canvas"));
 
 const fileInput = document.getElementById("file");
