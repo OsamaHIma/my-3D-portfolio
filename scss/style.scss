@@ -69,7 +69,7 @@ span {
 .text-pink {
     color: #6f42c1;
 }
-.w-50px {
+.w-20 {
     width: 50px;
 }
 #my-work,
@@ -140,7 +140,7 @@ a {
 .list-group {
     border-radius: 7px;
     transition: 0.3s all ease-in-out;
-    &-item:not(#currentlyLearning) {
+    &-item {
         /* From https://css.glass */
         background: rgba(255, 255, 255, 0.43);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -150,13 +150,28 @@ a {
         transition: 0.3s all ease-in-out;
         border-radius: 7px;
         margin: 7px 0;
+        i,img {
+            transition: .5s all ease-in-out;
+        }
         &:hover {
-            background-color: #4b5a5e;
-            color: #eee;
+            background-color: #5edf694b;
+            img,i {
+                transform: rotateZ(23deg);
+            }
         }
     }
 }
-
+#currentlyLearning {
+    &:hover {
+        background-color: #5edf692d;
+        color: #333332;
+    }
+    li {
+        &:hover {
+            background-color: #4da2d45d;
+        }
+    }
+}
 // The page itself--------------------------------------------
 
 .page {
@@ -531,6 +546,12 @@ a {
 .progress {
     height: 0.3rem !important;
 }
+#intro-progress-bar {
+    height: 100%;
+    width: 0%;
+    // border-radius: 8px;
+    background-image: linear-gradient(45deg, #7ac6d0, #5edf69);
+}
 
 #FormProgressBar {
     height: 100%;
@@ -538,24 +559,25 @@ a {
     border-radius: 80px;
     background-image: linear-gradient(45deg, #7ac6d0, #5edf69);
 }
-
+.intro-progress {
+    height: 1rem !important;
+}
 // Form section --------------------------------------------
-form {
-    button[type="submit"] {
-        transition: 0.5s all ease-in-out;
-        border: none;
-        color: #eee !important;
-        animation: color 1s ease-in-out alternate infinite;
+button[type="submit"] {
+    transition: 0.5s all ease-in-out;
+    border: none;
+    color: #eee !important;
+    animation: color 1s ease-in-out alternate infinite;
 
-        background-image: linear-gradient(45deg, #7ac6d0, #68a96d);
-        &:focus {
-            box-shadow: none;
-        }
-        &:hover {
-            color: var(--color-white) !important;
-        }
+    background-image: linear-gradient(45deg, #7ac6d0, #68a96d);
+    &:focus {
+        box-shadow: none;
     }
-
+    &:hover {
+        color: var(--color-white) !important;
+    }
+}
+form {
     .form-control {
         border-color: transparent !important;
         box-shadow: none !important;
@@ -565,7 +587,7 @@ form {
 // Footer section ----------------------------------------------------------
 footer {
     color: var(--color-text);
-    background-image:linear-gradient(45deg, #7ac6d0, #68a96d) ;
+    background-image: linear-gradient(45deg, #7ac6d0, #68a96d);
     position: relative;
     padding: 2em 1em 1em;
     .footer-container {

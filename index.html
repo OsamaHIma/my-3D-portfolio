@@ -2,15 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hello! my name is Osama I'm a Front-end Developer from Egypt"
-    />
-    <meta name="keywords" content="Portfolio, Front-end, Developer" />
-    <meta name="author" content="Osama" />
-    <script defer type="module" src="main.js"></script>
+    <script defer type="module" src="./main.js"></script>
 
     <!-- Fontawesome -->
     <link
@@ -53,21 +47,29 @@
     <div class="preloader">
       <div class="preloader-wrapper">
         <div class="loading">
-          <div class="text-center">
+          <!-- <div class="text-center">
             <div class="spinner-border text-light" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
-          </div>
-          <div class="container text-center">
-            <p class="text-light">
-              This is just a random text to distract you from the fact that this
-              website takes so long to load, like really long but it
-              depends on your machine too.
-            </p>
-          </div>
+            <p class="text-light" id="loaded"></p>
+          </div> -->
+
           <!-- <div class="circle"></div>
             <div class="circle"></div>
             <div class="circle"></div> -->
+        </div>
+        <div class="container">
+          <div class="progress intro-progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              id="intro-progress-bar"
+            >
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -117,7 +119,7 @@
             <section
               class="section-intro-wrapper"
               id="my-certifications"
-             
+              translate="yes"
             >
               <h1 class="section-title">
                 <p class="section-title-text">My Certifications</p>
@@ -137,11 +139,7 @@
                 href="https://graduation.udacity.com/confirm/GUFTCZJD"
                 target="_blank"
               >
-                <img
-                  data-src="/images/udacity certification.png"
-                  class="lazyload"
-                  alt="Udacity certification"
-                />
+                <img src="/images/udacity certification.png" alt="" srcset="" />
               </a>
               <h3 class="section-heading mt-3">
                 JavaScript course certification
@@ -150,27 +148,21 @@
                 href="https://www.udemy.com/certificate/UC-f55c74b0-92d4-492c-b0e9-5bfac8908752/"
                 target="_blank"
               >
-                <img
-                  data-src="/images/JS certification.jpg"
-                  class="lazyload"
-                  alt="JavaScript certification"
-                />
+                <img src="/images/JS certification.jpg" alt="" />
               </a>
 
               <h3 class="section-heading mt-3">
                 Wanna know more about me? download my CV!
               </h3>
 
-              <form method="get" action="/files/OSAMA IBRAHIM CV.pdf">
-                <button
-                  type="submit"
-                  class="btn btn-dark my-4"
-                  value="Download!"
+              <button type="submit" class="btn btn-dark my-4" value="Download!">
+                <i class="fa fa-download mx-1"></i>
+                <a
+                  class="nav-link"
+                  href="https://drive.google.com/file/d/1NM5cC8ku8zc40qAGfwXBb757xQmBLRxI/view?usp=share_link"
+                  >Download my CV!</a
                 >
-                  <i class="fa fa-download mx-1"></i>
-                  Download my CV
-                </button>
-              </form>
+              </button>
             </section>
           </section>
 
@@ -207,16 +199,6 @@
                 <li
                   class="list-group-item d-flex align-items-center justify-content-between"
                 >
-                  <img
-                    data-src="/images/react-router.svg"
-                    class="w-50px lazyload"
-                    alt="react router"
-                  />
-                  <p class="mb-0">React router</p>
-                </li>
-                <li
-                  class="list-group-item d-flex align-items-center justify-content-between"
-                >
                   <i class="fab fa-js-square fa-3x text-warning"></i>
                   <p class="mb-0">JavaScript</p>
                 </li>
@@ -247,23 +229,23 @@
                 <li
                   class="list-group-item d-flex align-items-center justify-content-between"
                 >
-                  <img
-                    data-src="/images/redux.svg"
-                    class="w-50px lazyload"
-                    alt="redux"
-                  />
+                  <img src="/images/redux.svg" class="w-20" />
                   <p class="mb-0">Redux.js</p>
                 </li>
                 <li
                   class="list-group-item d-flex align-items-center justify-content-between"
                 >
-                  <img
-                    data-src="/images/axios.svg"
-                    class="w-50px lazyload"
-                    alt="axios"
-                  />
+                  <img src="/images/axios.svg" class="w-20" />
 
                   <p class="mb-0">Axios</p>
+                </li>
+              
+                <li
+                  class="list-group-item d-flex align-items-center justify-content-between"
+                >
+                  <img src="/images/react-router.svg" class="w-20" />
+
+                  <p class="mb-0">React router</p>
                 </li>
                 <li class="list-group-item" id="currentlyLearning">
                   <p>Currently learning</p>
@@ -272,12 +254,6 @@
                     <li class="list-group-item">Three.js</li>
                   </ul>
                 </li>
-                <!-- <li
-                  class="list-group-item d-flex align-items-center justify-content-between"
-                >
-                  <img data-src="/images/ajax.svg" class="w-50px lazyload" alt="ajax" />
-                  <p class="mb-0">Ajax</p>
-                </li> -->
               </ul>
             </section>
           </section>
@@ -303,45 +279,37 @@
             <section class="section-detail-wrapper" id="my-work">
               <h3 class="section-heading mt-5">
                 <!-- Fiber ------------------------------------------- -->
-
-                <a
-                  href="https://fiber-com.netlify.app/"
-                  aria-label="fiber website"
-                  >Fiber</a
-                >
+                <a href="https://fiber-com.netlify.app/">Fiber</a>
               </h3>
               <h3 class="section-heading">A modern landing page</h3>
               <div id="fiber" class="carousel slide fiber-slide">
-                <a
-                  href="https://fiber-com.netlify.app/"
-                  aria-label="fiber website"
-                >
+                <a href="https://fiber-com.netlify.app/">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img
-                        data-src="/images/fiber1.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/fiber1.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/fiber2.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/fiber2.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/fiber3.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/fiber3.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/fiber4.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/fiber4.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
@@ -375,41 +343,32 @@
                 <p class="skill">JS</p>
                 <p class="skill">BOOTSTRAP</p>
               </div>
-
               <!-- Crwn store ---------------------------------------- -->
-
               <h3 class="section-heading mt-5">
-                <a
-                  href="https://crwn-online.netlify.app/"
-                  aria-label="crwn website"
-                  >Crwn store</a
-                >
+                <a href="https://crwn-online.netlify.app/">Crwn store</a>
               </h3>
               <h3 class="section-heading">An E-commerce store</h3>
               <div id="crwn" class="carousel slide">
-                <a
-                  href="https://crwn-online.netlify.app/"
-                  aria-label="crwn website"
-                >
+                <a href="https://crwn-online.netlify.app/">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img
-                        data-src="/images/arabi1.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/arabi1.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/arabi2.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/arabi2.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/arabi3.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/arabi3.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
@@ -445,46 +404,38 @@
               </div>
 
               <!-- Product ----------------------------------- -->
-
               <h3 class="section-heading mt-5">
-                <a
-                  href="https://product-com.netlify.app/"
-                  aria-label="product website"
-                  >Product</a
-                >
+                <a href="https://product-com.netlify.app/">Product</a>
               </h3>
               <h3 class="section-heading">A product landing page</h3>
               <div id="product" class="carousel slide fiber-slide">
-                <a
-                  href="https://product-com.netlify.app/"
-                  aria-label="product website"
-                >
+                <a href="https://product-com.netlify.app/">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img
-                        data-src="/images/product.png"
-                        class="d-block w-100 lazyload"
+                        src="/images/product.png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/product(1).png"
-                        class="d-block w-100 lazyload"
+                        src="/images/product(1).png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/product(2).png"
-                        class="d-block w-100 lazyload"
+                        src="/images/product(2).png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        data-src="/images/product(3).png"
-                        class="d-block w-100 lazyload"
+                        src="/images/product(3).png"
+                        class="d-block w-100"
                         alt="..."
                       />
                     </div>
@@ -524,7 +475,6 @@
           <div class="fourth-move section-margin"></div>
 
           <!-- Contact me section -->
-
           <section class="contact-section section right">
             <div class="progress-wrapper progress-wrapper-right">
               <div class="progress-bar blue-bg"></div>
@@ -564,7 +514,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="FistName"
+                    id="name"
                     placeholder="John"
                     name="first_name"
                     minlength="2"
@@ -580,7 +530,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="lastName"
+                    id="name"
                     placeholder="Doe"
                     name="last_name"
                     minlength="2"
@@ -655,56 +605,34 @@
           <!-- footer navigator -->
           <ul class="footer-menu__list mb-0">
             <li class="footer-menu__list-item">
-              <a
-                href="#my-work"
-                class="footer-menu__link"
-                aria-label="My work section"
-                >My Work</a
-              >
+              <a href="#my-work" class="footer-menu__link">My Work</a>
             </li>
             <li class="footer-menu__list-item">
-              <a
-                href="#my-skills"
-                class="footer-menu__link"
-                aria-label="my skills section"
-                >My Skills</a
-              >
+              <a href="#my-skills" class="footer-menu__link">My Skills</a>
             </li>
           </ul>
           <!-- footer buttons -->
           <div class="footer__social-btn float-end">
-            <a
-              href="https://github.com/OsamaHIma/"
-              aria-label="My github profile"
-              target="_blank"
+            <a href="https://github.com/OsamaHIma/" target="_blank"
               ><i class="fab fa-github fa-2x"></i
             ></a>
             <a
               href="https://www.linkedin.com/in/osama-ibrahim-100608244/"
               target="_blank"
-              aria-label="my linkedin account"
               ><i class="fab fa-linkedin fa-2x"></i
             ></a>
             <a
               href="https://www.facebook.com/profile.php?id=100078254302916"
               target="_blank"
-              aria-label="my facebook account"
               ><i class="fab fa-facebook fa-2x"></i
             ></a>
           </div>
         </div>
         <h2 class="text-center mb-0 mt-2 d-block fa-sm">
           Inspired by:
-          <a
-            href="https://bokoko33.me/"
-            aria-label="bokoko33 website"
-            target="_blank"
-            >bokoko33</a
-          >
+          <a href="https://bokoko33.me/" target="_blank">bokoko33</a>
         </h2>
       </footer>
     </div>
-    <script src="lazysizes.min.js" type="module" async></script>
-    <!-- Images End -->
   </body>
 </html>

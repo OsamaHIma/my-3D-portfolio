@@ -43,5 +43,6 @@ export default class Sizes extends EventEmitter {
         this.emit("switchDevice", this.device);
       }
     });
+    console.log(this.device);
   }
 }

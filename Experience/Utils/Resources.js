@@ -13,18 +13,24 @@ export default class Resources extends EventEmitter {
     this.items = {};
     this.queue = this.assets.length;
     this.loaded = 0;
-
+    this.introProgressBar = document.getElementById("intro-progress-bar");
+    this.loaderManager = new THREE.LoadingManager();
     this.setLoaders();
     this.startLoading();
   }
   setLoaders() {
     this.loaders = {};
-    this.loaders.gltfLoader = new GLTFLoader();
-    this.loaders.dracoLoader = new DRACOLoader();
+    this.loaders.gltfLoader = new GLTFLoader(this.loaderManager);
+    this.loaders.dracoLoader = new DRACOLoader(this.loaderManager);
     this.loaders.dracoLoader.setDecoderPath("/draco/");
     this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader);
   }
   startLoading() {
+    this.loaderManager.onProgress = (url, loaded, total) => {
+      const loadedNum = `${((loaded / total) * 100).toFixed()}%`;
+      this.introProgressBar.textContent = loadedNum;
+      this.introProgressBar.style.width = `${loadedNum}`;
+    };
     this.assets.forEach((asset) => {
       if (asset.type === "glbModel") {
         this.loaders.gltfLoader.load(asset.path, (file) => {

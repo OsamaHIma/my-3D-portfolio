@@ -33,6 +33,7 @@ export default class Preloader extends EventEmitter {
 
     this.room = this.experience.world.room.room;
     this.roomChildren = this.experience.world.room.roomChildren;
+    console.log(this.roomChildren);
   }
 
   firstIntro() {
@@ -307,7 +308,8 @@ export default class Preloader extends EventEmitter {
           {
             y: 4 * Math.PI + Math.PI / 4,
             ease: "power2.out",
-            duration: 2.1,
+            duration: 1,
+            // onComplete: resolve,
           },
           "chair"
         )
