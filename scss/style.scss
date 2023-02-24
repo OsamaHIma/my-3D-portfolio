@@ -542,7 +542,10 @@ a {
         border-radius: 13px;
         &:hover,
         &:focus,
-        &:focus-within {
+        &:focus-within,
+        &:target,
+        &:active {
+            visibility: visible;
             opacity: 1;
             animation: fill 1s ease-in-out;
             .fa-github {
@@ -571,15 +574,17 @@ a {
 }
 .skills-wrapper {
     @include setFlex();
-    justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 15px 0;
+    flex-wrap: wrap;
+
 }
 
 .skill {
     padding: 10px 13px;
     border: 1px solid #68a96d;
     border-radius: 7px;
-    margin: 0 7px;
+    margin: 7px;
     transition: 0.4s all ease-in-out;
     color: var(--color-text);
     &:hover {
