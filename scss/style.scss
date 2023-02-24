@@ -86,12 +86,16 @@ a {
     color: var(--color-text);
 }
 
-// Display flex mixin --------------------------------------------
+// mixins --------------------------------------------
 @mixin setFlex {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+@mixin transition($seconds) {
+    transition: $seconds all ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -137,41 +141,7 @@ a {
     width: 100%;
     height: 100%;
 }
-.list-group {
-    border-radius: 7px;
-    transition: 0.3s all ease-in-out;
-    &-item {
-        /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.43);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.01);
-        transition: 0.3s all ease-in-out;
-        border-radius: 7px;
-        margin: 7px 0;
-        i,img {
-            transition: .5s all ease-in-out;
-        }
-        &:hover {
-            background-color: #5edf694b;
-            img,i {
-                transform: rotateZ(23deg);
-            }
-        }
-    }
-}
-#currentlyLearning {
-    &:hover {
-        background-color: #5edf692d;
-        color: #333332;
-    }
-    li {
-        &:hover {
-            background-color: #4da2d45d;
-        }
-    }
-}
+
 // The page itself--------------------------------------------
 
 .page {
@@ -201,27 +171,20 @@ a {
         width: 100%;
         height: 100%;
     }
-    .loading {
-        @include setFlex();
-        flex-direction: column;
-        .spinner-border {
-            background-image: linear-gradient(45deg, #4da3d4, #67c76f);
-        }
-    }
     .circle {
-        width: 10px;
-        height: 10px;
+        width: 5px;
+        height: 5px;
         border-radius: 50%;
-        margin: 6px;
-        background-color: var(--color-background-light);
+        margin: 3px;
+        background-color: var(--color-white);
         animation: load 1s ease-in-out infinite;
     }
 
-    .circle:nth-child(2) {
+    .circle:nth-child(3) {
         animation-delay: 0.1s;
     }
 
-    .circle:nth-child(3) {
+    .circle:nth-child(4) {
         animation-delay: 0.2s;
     }
 }
@@ -237,6 +200,15 @@ a {
 
     40% {
         transform: translateY(0);
+    }
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(35px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
@@ -516,7 +488,87 @@ a {
     }
 }
 
-// My work carousel ----------------------------------------------------
+// My skills section ----------------------------------------------
+.list-group {
+    border-radius: 7px;
+    transition: 0.3s all ease-in-out;
+    &-item {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.43);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.01);
+        @include transition(0.3s);
+        border-radius: 7px;
+        margin: 7px 0;
+        i,
+        img {
+            transition: 0.5s all ease-in-out;
+        }
+        &:hover {
+            background-color: #5edf694b;
+            img,
+            i {
+                transform: rotateZ(23deg);
+            }
+        }
+    }
+}
+#currentlyLearning {
+    &:hover {
+        background-color: #5edf692d;
+        color: #333332;
+    }
+    li {
+        &:hover {
+            background-color: #4da2d45d;
+        }
+    }
+}
+
+// My projects ----------------------------------------------------
+.project {
+    img {
+        display: block !important;
+    }
+    .links {
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5px);
+        @include transition(0.2s);
+        opacity: 0;
+        border-radius: 13px;
+        &:hover,
+        &:focus,
+        &:focus-within {
+            opacity: 1;
+            animation: fill 1s ease-in-out;
+            .fa-github {
+                animation: popup 0.4s ease-in-out;
+            }
+            .fa-link {
+                animation: popup 0.6s ease-in-out;
+            }
+        }
+        .light-color {
+            color: #faf4e5;
+        }
+
+        i {
+            color: #555555;
+            padding: 1rem;
+            margin: 0 2.8rem;
+            @include transition(0.2s);
+            cursor: pointer;
+            &:hover {
+                color: #64c59d;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
 .skills-wrapper {
     @include setFlex();
     justify-content: flex-start;
@@ -535,10 +587,6 @@ a {
         background-image: linear-gradient(45deg, #7ad0ac, #68a96d);
         border: none;
     }
-}
-
-.carousel {
-    min-height: 300px;
 }
 
 // Form progress bar --------------------------------------------------------
@@ -598,7 +646,6 @@ footer {
     .footer-menu__list {
         @include setFlex();
         list-style: none;
-        // flex: 8;
         text-align: center;
         padding: 0;
         &-item {
@@ -613,7 +660,9 @@ footer {
         a {
             margin: 0 10px;
         }
-        // text-align: right;
+    }
+    i:hover {
+        color: var(--color-white);
     }
 }
 
